@@ -1,0 +1,106 @@
+
+{% extends "base.html" %}
+{# {% load staticfiles %} #}
+{% load static %}
+
+{% block head %}
+<title>Networking</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+ {% endblock %}
+
+ {% block content %}
+
+ <br><br><br><br>
+ <center>
+ <font color="#686868" size="6" face="Comic Sans MS,Arial,Verdana">LISTADO DE ESTUDIOS OFICIALES</font>
+  <br>
+   <img src="{% static 'images/chica2.jpg'%}" height='190' width='190'>
+ </center>
+
+
+ {% if not request.user.is_authenticated %}
+
+ {% endif %}
+
+ {% if request.user.is_authenticated %}
+
+ {% endif %}
+
+{% endblock content %}
+
+<!--
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudios Obtenidos</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Estudios Obtenidos</h1>
+
+    <p>Total de registros: {{ numregistros }}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titulación</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Fin</th>
+                <th>Nota Media</th>
+                <th>Lugar de Estudio</th>
+                <th>Nombre Lugar</th>
+                <th>Ciudad</th>
+                <th>Presencial</th>
+                <th>Observaciones</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estudio in page_obj %}
+            <tr>
+                <td>{{ estudio.id }}</td>
+                <td>{{ estudio.titulacion }}</td>
+                <td>{{ estudio.fechaInicio }}</td>
+                <td>{{ estudio.fechaFin }}</td>
+                <td>{{ estudio.notaMedia }}</td>
+                <td>{{ estudio.lugarEstudio }}</td>
+                <td>{{ estudio.nombreLugar }}</td>
+                <td>{{ estudio.ciudad }}</td>
+                <td>{{ estudio.presencial }}</td>
+                <td>{{ estudio.observaciones }}</td>
+                <td>
+                    <a href="{% url 'ver_estudio' estudio.id %}">Ver</a> |
+                    <a href="{% url 'editar_estudio' estudio.id %}">Editar</a> |
+                    <a href="{% url 'eliminar_estudio' estudio.id %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; primero</a>
+                <a href="?page={{ page_obj.previous_page_number }}">anterior</a>
+            {% endif %}
+
+            <span class="current">
+                Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">siguiente</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">último &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+
+</body>
+</html>
+-->

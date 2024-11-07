@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <br><br><br><br>
+  <h1>Eliminar Experiencia</h1>
+    <p>¿Estas seguro de que deseas eliminar la experiencia {{experiencia.empresa}}?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-warning btn-sm">Eliminar</button>
+      <a href="{% url 'home'%}" class="btn btn-warning btn-sm">Cancelar</a>
+    </form>
+</body>
+</html>
